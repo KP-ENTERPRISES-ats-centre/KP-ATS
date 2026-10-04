@@ -1,0 +1,5 @@
+document.getElementById('year').textContent=new Date().getFullYear();
+const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('.main-nav');
+toggle.addEventListener('click',()=>nav.classList.toggle('open'));
+document.querySelectorAll('.main-nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+function createJobCard(e){e.preventDefault();const n=document.getElementById('customerName').value.trim(),v=document.getElementById('vehicleNumber').value.trim(),m=document.getElementById('vehicleModel').value.trim()||'Not provided',p=document.getElementById('phone').value.trim()||'Not provided',s=document.getElementById('serviceType').value,r=document.getElementById('jobResult');r.hidden=false;r.innerHTML='<strong>Job Card Created: KP-'+Date.now().toString().slice(-6)+'</strong><br>Customer: '+esc(n)+'<br>Vehicle No.: '+esc(v)+'<br>Vehicle Model: '+esc(m)+'<br>Mobile: '+esc(p)+'<br>Service: '+esc(s);return false}function esc(x){return x.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
